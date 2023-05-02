@@ -1,23 +1,24 @@
 package Hora;
 
+import java.io.IOException;
+
 public class Hora {
     public int hora;
     public int minuto;
     public int segundo;
 
-    public Hora(int h, int m, int s) throws IllegalArgumentException{
-        if (h < 0 || h > 23){
-            throw new IllegalArgumentException("Hora no válida: " + h);
+    public Hora(int h, int m, int s) throws HoraException {
+        if (h < 0 || h > 23) {
+            throw new HoraException("Hora no válida: " + h);
+        } else if (m < 0 || m > 59) {
+            throw new HoraException("Minutos no válidos: " + m);
+        } else if (s < 0 || s > 59) {
+            throw new HoraException("Segundos no válidos: " + s);
+        } else {
+            this.hora = h;
+            this.minuto = m;
+            this.segundo = s;
         }
-        if (m < 0 || m > 59){
-            throw new IllegalArgumentException("Minutos no válidos: " + m);
-        }
-        if (s < 0 || s > 59){
-            throw new IllegalArgumentException("Segundos no válidos: " + s);
-        }
-        this.hora = h;
-        this.minuto = m;
-        this.segundo = s;
     }
 
     public int getHora() {
@@ -47,7 +48,9 @@ public class Hora {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
-        sb.append(hora).append(":").append(minuto).append(":").append(segundo);
+        sb.append(String.format("%02d", hora));
+        sb.append(":").append(String.format("%02d", minuto));
+        sb.append(":").append(String.format("%02d", segundo));
         return sb.toString();
     }
 }
