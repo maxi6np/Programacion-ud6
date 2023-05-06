@@ -1,4 +1,4 @@
-package Ejers.Ejer6x3;
+package Ejers;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -10,7 +10,7 @@ public class Ejer6x1 {
             int b = 0;
             System.out.println(a / b);
         } catch (ArithmeticException e) {
-            System.out.println("No se puede dividir entre 0");
+            System.err.println("No se puede dividir entre 0");
         }
 
         try {
@@ -18,7 +18,7 @@ public class Ejer6x1 {
             array[5] = 1;
             System.out.println(array[5]);
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("El índice seleccionado esta fuera de los límites del array");
+            System.err.println("El índice seleccionado esta fuera de los límites del array");
         }
 
         try {
@@ -27,7 +27,7 @@ public class Ejer6x1 {
             int n = sc.nextInt();
             System.out.println("Número introducido: " + n);
         } catch (InputMismatchException e) {
-            System.out.println("No se admiten decimales");
+            System.err.println("No se admiten decimales");
 
         }
     }
