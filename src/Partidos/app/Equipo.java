@@ -43,7 +43,7 @@ public class Equipo implements Comparable<Equipo>{
     public int compareTo(Equipo o) {
         int resultado = o.puntos - this.puntos;
         if (resultado == 0) {
-            resultado = this.nombre.compareTo(o.nombre);
+            resultado = Integer.compare(o.golesFavor,this.getGolesFavor());
         }
         return resultado;
     }
