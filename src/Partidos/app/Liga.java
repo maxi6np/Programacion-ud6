@@ -1,5 +1,7 @@
 package Partidos.app;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class Liga {
@@ -8,7 +10,7 @@ public class Liga {
 
     public Liga() {
         partidos = new HashSet<>();
-        equipos = new TreeSet<>();
+        equipos = new HashSet<>();
     }
 
     public void addPartido(Partido partido) {
@@ -93,4 +95,134 @@ public class Liga {
             }
         }
     }
+
+    public void ficheroClasificacionCompleta(String nombre) {
+        FileWriter f = null;
+        int contador = 0;
+        try {
+            f = new FileWriter(nombre);
+            f.write("<html>");
+            f.write("<title>Clasificacion de la liga</title>");
+            f.write("<body>");
+            f.write("<h2 style=\"font-size: 20px;\">Liga Santander</h2>");
+
+            f.write("<table style=\"border= 1;\">");
+            f.write("<tr>");
+            f.write("<th>Posicion</th>");
+            f.write("<th>Equipos</th>");
+            f.write("<th>GF</th>");
+            f.write("<th>GC</th>");
+            f.write("</tr>");
+
+            List<Equipo> equiposOrdenados = new ArrayList<>(equipos);
+            Collections.sort(equiposOrdenados);
+            for (Equipo equipo : equiposOrdenados) {
+                f.write("<tr>");
+                f.write("<td>" + (++contador) + "</td>");
+                f.write("<td>" + equipo.getNombre() + "</td>");
+                f.write("<td>" + equipo.getGolesFavor() + "</td>");
+                f.write("<td>" + equipo.getGolesContra() + "</td>");
+                f.write("</tr>");
+            };
+
+            f.write("</table>");
+            f.write("</body>");
+            f.write("</html>");
+        } catch (IOException e) {
+            System.out.println("Error al crear " + nombre);
+        } finally {
+            if (f != null) {
+                try {
+                    f.close();
+                } catch (IOException e) {
+                    System.out.println("Error al cerrar " + nombre);
+                }
+            }
+        }
+    }
+    public void ficheroGolesFavor(String nombre) {
+        FileWriter f = null;
+        int contador = 0;
+        try {
+            f = new FileWriter(nombre);
+            f.write("<html>");
+            f.write("<title>Clasificacion de la liga</title>");
+            f.write("<body>");
+            f.write("<h2 style=\"font-size: 20px;\">Liga Santander según GF</h2>");
+
+            f.write("<table style=\"border= 1;\">");
+            f.write("<tr style=\"color = darkred;\">");
+            f.write("<th>Posicion</th>");
+            f.write("<th>Equipos</th>");
+            f.write("<th>GF</th>");
+            f.write("</tr>");
+
+            List<Equipo> equiposOrdenados = new ArrayList<>(equipos);
+            equiposOrdenados.sort(new ComparadorGolesFavor());
+            for (Equipo equipo : equiposOrdenados) {
+                f.write("<tr style=\"color = lightgreen;\">");
+                f.write("<td>" + (++contador) + "</td>");
+                f.write("<td>" + equipo.getNombre() + "</td>");
+                f.write("<td>" + equipo.getGolesFavor() + "</td>");
+                f.write("</tr>");
+            };
+
+            f.write("</table>");
+            f.write("</body>");
+            f.write("</html>");
+        } catch (IOException e) {
+            System.out.println("Error al crear " + nombre);
+        } finally {
+            if (f != null) {
+                try {
+                    f.close();
+                } catch (IOException e) {
+                    System.out.println("Error al cerrar " + nombre);
+                }
+            }
+        }
+    }
+    public void ficheroGolesContra(String nombre) {
+        FileWriter f = null;
+        int contador = 0;
+        try {
+            f = new FileWriter(nombre);
+            f.write("<html>");
+            f.write("<title>Clasificacion de la liga</title>");
+            f.write("<body>");
+            f.write("<h2 style=\"font-size: 20px;\">Liga Santander segun GC</h2>");
+
+            f.write("<table style=\"border= 1;\">");
+            f.write("<tr>");
+            f.write("<th>Posicion</th>");
+            f.write("<th>Equipos</th>");
+            f.write("<th>GC</th>");
+            f.write("</tr>");
+
+            List<Equipo> equiposOrdenados = new ArrayList<>(equipos);
+            equiposOrdenados.sort(new ComparadorGolesContra());
+            for (Equipo equipo : equiposOrdenados) {
+                f.write("<tr>");
+                f.write("<td>" + (++contador) + "</td>");
+                f.write("<td>" + equipo.getNombre() + "</td>");
+                f.write("<td>" + equipo.getGolesContra() + "</td>");
+                f.write("</tr>");
+            };
+
+            f.write("</table>");
+            f.write("</body>");
+            f.write("</html>");
+        } catch (IOException e) {
+            System.out.println("Error al crear " + nombre);
+        } finally {
+            if (f != null) {
+                try {
+                    f.close();
+                } catch (IOException e) {
+                    System.out.println("Error al cerrar " + nombre);
+                }
+            }
+        }
+    }
+
 }

@@ -6,5 +6,8 @@ public class Main {
         liga.leerFichero();
         liga.resultado();
         liga.imprimirLiga();
+        liga.ficheroClasificacionCompleta("liga.html");
+        liga.ficheroGolesFavor("golesFavor.html");
+        liga.ficheroGolesContra("golesContra.html");
     }
 }

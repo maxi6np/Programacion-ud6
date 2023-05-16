@@ -1,6 +1,6 @@
 package Calculadora;
 
-public class DivisionPorCeroException extends Exception{
+public class DivisionPorCeroException extends RuntimeException{
     public String mensaje;
     public DivisionPorCeroException(String mensaje){
         this.mensaje = mensaje;
