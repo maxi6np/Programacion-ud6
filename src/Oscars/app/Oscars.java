@@ -1,5 +1,6 @@
 package Oscars.app;
 
+import javax.print.DocFlavor;
 import java.io.*;
 import java.util.*;
 
@@ -78,6 +79,46 @@ public class Oscars {
         return map;
     }
 
+    public void peliculasPorPalabra(String texto) {
+        String text = texto.toLowerCase();
+        System.out.println("Películas que contienen la cadena \"" + texto + "\":");
+
+        for (Actriz actriz : peliculasActriz.keySet()) {
+            for (Pelicula pelicula : peliculasActriz.get(actriz)) {
+                String nombre = pelicula.getNombre().toLowerCase();
+                if (nombre.contains(text)) {
+                    System.out.println("- " + pelicula + ". " + actriz + " (" + pelicula.getAnio() + ")");
+                }
+            }
+        }
+    }
+
+    public List<String> actricesSegunEdadConPelicula(int edad) {
+        List<Pelicula> listaIntermedia = new ArrayList<>();
+        List<String> resultado = new ArrayList<>();
+
+        for (Actriz actriz : peliculasActriz.keySet()) {
+            for (Pelicula pelicula : peliculasActriz.get(actriz)) {
+                if (pelicula.getEdadActriz() == edad) {
+                    listaIntermedia.add(pelicula);
+                }
+            }
+        }
+        listaIntermedia.sort(new ComparadorPeliculasEdad());
+
+        for (Pelicula peli : listaIntermedia) {
+            for (Actriz actriz : peliculasActriz.keySet()) {
+                for (Pelicula pelicula : peliculasActriz.get(actriz)) {
+                    if (peli.equals(pelicula)) {
+                        String linea = actriz + ";" + peli.getNombre();
+                        resultado.add(linea);
+                    }
+                }
+            }
+        }
+        return resultado;
+    }
+
 
     public void leerFichero(String nombre) {
         BufferedReader entrada = null;
@@ -135,6 +176,28 @@ public class Oscars {
 
             salida.println("</body>");
             salida.println("</html>");
+
+        } catch (IOException e) {
+            System.out.println("Error al crear el fichero " + nombre);
+        } finally {
+            if (salida != null) {
+                try {
+                    salida.close();
+                } catch (NullPointerException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+    }
+
+    public void cargarCSV(String nombre) {
+        PrintWriter salida = null;
+        try {
+            salida = new PrintWriter(new BufferedWriter(new FileWriter(nombre)));
+            List<String> lista = actricesSegunEdadConPelicula(33);
+            for (String linea : lista) {
+                salida.println(linea);
+            }
 
         } catch (IOException e) {
             System.out.println("Error al crear el fichero " + nombre);

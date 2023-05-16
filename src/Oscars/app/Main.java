@@ -5,6 +5,8 @@ public class Main {
         Oscars oscar = new Oscars();
         oscar.leerFichero("src\\Oscars\\actrices.csv");
         //oscar.mostrarActrices();
-        oscar.cargarFichero("viejas.html");
+        //oscar.cargarFichero("viejas.html");
+        //oscar.peliculasPorPalabra("good");
+        oscar.cargarCSV("actricesYPeliculasPorEdadConcreta.csv");
     }
 }

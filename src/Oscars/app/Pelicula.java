@@ -30,7 +30,7 @@ public class Pelicula {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pelicula pelicula = (Pelicula) o;
-        return anio == pelicula.anio;
+        return Objects.equals(nombre, pelicula.nombre);
     }
 
     @Override
