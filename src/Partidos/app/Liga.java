@@ -83,8 +83,7 @@ public class Liga {
                 int golesLocal = Integer.parseInt(datosPartido[2].trim());
                 int golesVisitante = Integer.parseInt(datosPartido[3].trim());
 
-                Partido partido = new Partido(local, visitante, golesLocal, golesVisitante);
-                this.addPartido(partido);
+                this.addPartido(new Partido(local, visitante, golesLocal, golesVisitante));
             }
 
         } finally {

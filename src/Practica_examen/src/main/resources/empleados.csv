@@ -1,0 +1,46 @@
+nombre;apellido1;apellido2;identificacion;fecha_nacimiento;consejería;departamento;categoria_profesional;salario;dias_vacaciones;dias_vacaciones_disfrutados
+Carlos;González;López;G-12547839;10/03/1985;Consejería de Educación;Departamento de Enseñanza;superior;31500;30;15
+Laura;Gómez;Fernández;F-98765432;05-17-1992;Consejería de Salud;Departamento de Sanidad;intermedio;24800;25;12
+Juan;Rodríguez;Martínez;R-56789321;1988-12-25;Consejería de Cultura;Departamento de Arte;general;20000;22;10
+María;López;García;L-23456789;21/08/1979;Consejería de Medio Ambiente;Departamento de Sostenibilidad;superior;32900;30;14
+Pedro;Martín;Hernández;P-43987652;09-02-1987;Consejería de Economía;Departamento de Finanzas;intermedio;26000;25;10
+Sara;Pérez;Vargas;S-87654321;03-28-1995;Consejería de Turismo;Departamento de Promoción;general;21000;22;11
+Roberto;Fernández;Sánchez;R-32145678;1976-06-15;Consejería de Transporte;Departamento de Logística;superior;32500;30;12
+Ana;Torres;Jiménez;A-65478932;12/09/1984;Consejería de Agricultura;Departamento de Ganadería;intermedio;28000;25;13
+Javier;Ramírez;López;J-98765432;02-14-1990;Consejería de Energía;Departamento de Producción;general;22000;22;8
+Alejandro;Hernández;Santos;A-98765432;09/05/1993;Consejería de Comunicación;Departamento de Medios;superior;34500;30;13
+Luisa;García;Martín;L-54321678;06-12-1987;Consejería de Justicia;Departamento Legal;intermedio;25000;25;11
+Elena;Martínez;Vargas;E-87654321;1982-07-25;Consejería de Turismo;Departamento de Promoción;general;20000;22;9
+Hugo;Sánchez;Gómez;H-12345678;03/09/1990;Consejería de Cultura;Departamento de Patrimonio;superior;32000;30;12
+Isabel;López;Rodríguez;I-45678932;10-21-1985;Consejería de Salud;Departamento de Investigación;intermedio;27000;25;9
+Daniel;Fernández;Jiménez;D-98761234;1998-11-05;Consejería de Educación;Departamento de Formación;general;22000;22;10
+Carmen;Pérez;Herrera;C-54321678;07/15/1977;Consejería de Medio Ambiente;Departamento de Conservación;superior;31000;30;14
+Ricardo;Gómez;Santana;R-56781234;04-28-1986;Consejería de Economía;Departamento de Contabilidad;intermedio;25000;25;11
+Marta;Rodríguez;Navarro;M-78912345;12/30/1992;Consejería de Agricultura;Departamento de Agricultura;general;19000;22;8
+Antonio;Herrera;Silva;A-23456781;11-07-1989;Consejería de Energía;Departamento de Distribución;superior;33000;30;13
+Miguel;López;Hernández;M-78945612;08/14/1982;Consejería de Cultura;Departamento de Artes Escénicas;superior;31500;30;14
+Sofía;González;Martín;S-12345678;09-20-1991;Consejería de Salud;Departamento de Investigación Médica;intermedio;26000;25;10
+Raul;Martínez;Silva;R-45678912;1987-05-08;Consejería de Educación;Departamento de Formación Docente;general;21000;22;10
+Carolina;Fernández;Sánchez;C-98765412;07/03/1984;Consejería de Medio Ambiente;Departamento de Gestión Ambiental;superior;34000;30;13
+Andrés;García;Vargas;A-65412378;03-12-1990;Consejería de Turismo;Departamento de Promoción Turística;intermedio;28000;25;12
+Lucía;Rodríguez;López;L-98765432;12/01/1986;Consejería de Agricultura;Departamento de Ganadería;general;20000;22;9
+Eduardo;Pérez;Herrera;E-12378945;06-07-1993;Consejería de Economía;Departamento de Finanzas;superior;33000;30;12
+Clara;Sánchez;Gómez;C-45678912;02/28/1989;Consejería de Transporte;Departamento de Logística;intermedio;25000;25;11
+Diego;Hernández;Martínez;D-12345678;1995-11-23;Consejería de Energía;Departamento de Energías Renovables;general;20000;22;8
+Paula;Gómez;Fernández;P-65412378;10-05-1987;Consejería de Salud;Departamento de Salud Pública;superior;33500;30;13
+Alonso;Silva;López;A-98765412;09/18/1992;Consejería de Cultura;Departamento de Patrimonio Cultural;intermedio;27000;25;10
+Marina;Martín;González;M-78912345;04-16-1988;Consejería de Educación;Departamento de Innovación Educativa;general;22000;22;9
+Alejandra;López;Herrera;A-32145678;07/26/1983;Consejería de Medio Ambiente;Departamento de Recursos Naturales;superior;32000;30;12
+Felipe;Fernández;Pérez;F-78945612;03-30-1991;Consejería de Agricultura;Departamento de Agricultura Sostenible;intermedio;28000;25;11
+Valentina;Sánchez;Rodríguez;V-12378945;1985-09-10;Consejería de Turismo;Departamento de Desarrollo Turístico;general;21000;22;10
+Gabriel;González;Silva;G-45678912;12/08/1988;Consejería de Economía;Departamento de Comercio Internacional;superior;30000;30;12
+Ismael;Hernández;Gómez;I-78912345;09/05/1986;Consejería de Educación;Departamento de Evaluación Educativa;superior;30000;30;11
+Renata;Gómez;Vargas;R-45678901;05-17-1993;Consejería de Salud;Departamento de Farmacología;intermedio;24000;25;10
+Emilio;Martín;Santos;E-12345678;1982-11-25;Consejería de Cultura;Departamento de Arqueología;general;20000;22;9
+Valeria;López;Fernández;V-78901234;03/18/1989;Consejería de Medio Ambiente;Departamento de Conservación de la Naturaleza;superior;34000;30;13
+Gustavo;García;Silva;G-90123456;10-21-1995;Consejería de Turismo;Departamento de Promoción de Eventos;intermedio;28000;25;10
+Olivia;Rodríguez;Pérez;O-78901234;12/07/1987;Consejería de Agricultura;Departamento de Agricultura Orgánica;general;22000;22;9
+Héctor;Pérez;Martínez;H-34567890;09-29-1992;Consejería de Economía;Departamento de Análisis Financiero;superior;31000;30;13
+Camila;Sánchez;Herrera;C-90123456;01/25/1988;Consejería de Transporte;Departamento de Planificación Logística;intermedio;27000;25;11
+Matías;Hernández;González;M-78901234;1994-06-12;Consejería de Energía;Departamento de Eficiencia Energética;general;20000;22;9
+Ana;Gómez;López;A-45678901;08-03-1989;Consejería de Salud;Departamento de Epidemiología;superior;32000;30;13

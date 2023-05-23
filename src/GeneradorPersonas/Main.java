@@ -6,8 +6,8 @@ public class Main{
     private static final List<Persona> personas = new ArrayList<>();
 
     public static void main(String[] args){
-        generarPersonas(-4);
-        //mostrarPersonas(personas);
+        generarPersonas(5);
+        mostrarPersonas(personas);
         //System.out.println(personasPorNombre());
         //System.out.println(personasPorApellidos());
         //System.out.println(repeticionApellidos());
@@ -24,10 +24,10 @@ public class Main{
      * @param nPersonas personas que se quieren generar
      */
     private static void generarPersonas(int nPersonas){
-        //personas.addAll(GeneradorPersonas.genera(nPersonas));
         try{
+            personas.addAll(GeneradorPersonas.genera(nPersonas));
             GeneradorPersonas.genera(nPersonas);
-            System.out.println("El número de personas el válido");
+            System.out.println("El número de personas es válido");
         }catch (NumNegativoPersonasException e){
             System.err.println(e.getMensaje());
         }
@@ -122,13 +122,6 @@ public class Main{
             int frecuencia = siguiente.getValue();
             System.out.println(apel + " -> " + frecuencia);
         }
-
-
-        /*
-         * for(String apel : mapa.keySet()){
-         *              System.out.println(apel + " -> " + mapa.get(apel));
-         *         }
-         */
 
 
     }

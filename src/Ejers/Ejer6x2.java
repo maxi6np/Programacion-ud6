@@ -1,4 +1,4 @@
-package Ejers.Ejer6x3;
+package Ejers;
 
 public class Ejer6x2 {
     public static void main(String[] args) {

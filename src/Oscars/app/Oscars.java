@@ -1,6 +1,5 @@
 package Oscars.app;
 
-import javax.print.DocFlavor;
 import java.io.*;
 import java.util.*;
 
@@ -65,11 +64,12 @@ public class Oscars {
         }
     }
 
-    public Map<Actriz, Set<Pelicula>> mostrarActricesMas65Anios(Map<Actriz, Set<Pelicula>> mapa) {
+    public Map<Actriz, Set<Pelicula>> buscarActricesYOscarsPorEdadMayorQue(Map<Actriz, Set<Pelicula>> mapa, int edad) {
+
         Map<Actriz, Set<Pelicula>> map = new HashMap<>();
         for (Actriz actriz : mapa.keySet()) {
             for (Pelicula pelicula : mapa.get(actriz)) {
-                if (pelicula.getEdadActriz() >= 65) {
+                if (pelicula.getEdadActriz() >= edad) {
                     Set<Pelicula> p = new HashSet<>();
                     p.add(pelicula);
                     map.put(actriz, p);
@@ -80,13 +80,11 @@ public class Oscars {
     }
 
     public void peliculasPorPalabra(String texto) {
-        String text = texto.toLowerCase();
         System.out.println("Películas que contienen la cadena \"" + texto + "\":");
 
         for (Actriz actriz : peliculasActriz.keySet()) {
             for (Pelicula pelicula : peliculasActriz.get(actriz)) {
-                String nombre = pelicula.getNombre().toLowerCase();
-                if (nombre.contains(text)) {
+                if (pelicula.getNombre().toLowerCase().contains(texto.toLowerCase())) {
                     System.out.println("- " + pelicula + ". " + actriz + " (" + pelicula.getAnio() + ")");
                 }
             }
@@ -162,7 +160,7 @@ public class Oscars {
             salida.println("<body>");
             salida.println("<h2 style=\"font-size: 20px;\">Actrices que ganaron un Oscar con más de 65 años</h2>");
 
-            Map<Actriz, Set<Pelicula>> mapa = mostrarActricesMas65Anios(peliculasActriz);
+            Map<Actriz, Set<Pelicula>> mapa = buscarActricesYOscarsPorEdadMayorQue(peliculasActriz,65);
             for (Actriz actriz : mapa.keySet()) {
                 salida.println("<ul>");
                 salida.println("<li>" + actriz + "</li>");

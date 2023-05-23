@@ -10,12 +10,13 @@ public class Calculadora {
     public double resultado;
     public Scanner sc = new Scanner(System.in);
     public boolean salir = false;
+    public final String SALIR = "SALIR";
 
     public void salir() {
         System.out.println("Si quieres salir, escribe 'SALIR'. " +
                 "Si quieres seguir, pulsa cualquier otra tecla:");
         String texto = sc.next();
-        if (texto.equalsIgnoreCase("SALIR")){
+        if (texto.equalsIgnoreCase(SALIR)) {
             salir = true;
         }
     }
@@ -32,7 +33,7 @@ public class Calculadora {
         }
     }
 
-    public void leerOperador() throws ExceptionOperadorInvalido{
+    public void leerOperador() throws ExceptionOperadorInvalido {
         boolean correcto = false;
         while (!correcto) {
             System.out.println("Introduzca el operador de la operación(+ , - , / , * ):");
@@ -53,6 +54,8 @@ public class Calculadora {
             case '/' -> {
                 if (segundoOp == 0) {
                     throw new DivisionPorCeroException("No se puede dividir por cero");
+                } else {
+                    resultado = primerOp / segundoOp;
                 }
             }
         }

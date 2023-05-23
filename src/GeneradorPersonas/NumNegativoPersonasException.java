@@ -11,18 +11,6 @@ public class NumNegativoPersonasException extends Exception{
     }
 
     public String getMensaje() {
-        return mensaje;
-    }
-
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
+        return "NumNegativoPersonasException: " + mensaje + " (" + numero + ")";
     }
 }
