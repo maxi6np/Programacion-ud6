@@ -1,3 +1,5 @@
+package Practica_examen.src.java;
+
 public enum Categoria {
 
     A(0,0, 0),

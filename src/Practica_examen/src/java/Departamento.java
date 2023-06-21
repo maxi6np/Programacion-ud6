@@ -1,3 +1,5 @@
+package Practica_examen.src.java;
+
 public class Departamento extends Consejeria{
 
     private String nombre;

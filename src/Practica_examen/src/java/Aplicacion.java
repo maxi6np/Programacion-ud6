@@ -1,3 +1,5 @@
+package Practica_examen.src.java;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -76,7 +78,7 @@ public class Aplicacion {
     }
 
     public static LocalDate asignarFecha(String identificador, String fechaStr) {
-        LocalDate fecha = null;
+        LocalDate fecha;
 
         try {
             fecha = LocalDate.parse(fechaStr, DateTimeFormatter.ofPattern("d/M/y"));
@@ -100,7 +102,7 @@ public class Aplicacion {
                         } catch (DateTimeParseException e5) {
                             e3.printStackTrace();
                             System.out.println("No se ha podido convertir la fecha del empleado " + identificador);
-                            return fecha = null;
+                            return null;
                         }
                     }
                 }
